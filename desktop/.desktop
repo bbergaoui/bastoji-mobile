@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=4.5.0
+Name=Copay
+Comment=Copay Bastoji Wallet
+Exec=Copay
+Icon=icon.png
+Terminal=false
+Categories=Finance
+X-Ubuntu-Touch=true
+X-Ubuntu-StageHint=SideStage
