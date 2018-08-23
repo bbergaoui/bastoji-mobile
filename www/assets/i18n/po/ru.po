@@ -5,10 +5,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "X-Generator: crowdin.com\n"
-"X-Crowdin-Project: copay\n"
+"X-Crowdin-Project: sqoin\n"
 "X-Crowdin-Language: ru\n"
 "X-Crowdin-File: template.pot\n"
-"Project-Id-Version: copay\n"
+"Project-Id-Version: sqoin\n"
 "Last-Translator: cmgustavo83\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -20,7 +20,7 @@ msgstr "(Доверенный)"
 msgid "(possible double spend)"
 msgstr "(возможна двойная трата)"
 
-msgid "* A payment proposal can be deleted if 1) you are the creator, and no other copayer has signed, or 2) 10 minutes have passed since the proposal was created."
+msgid "* A payment proposal can be deleted if 1) you are the creator, and no other sqoiner has signed, or 2) 10 minutes have passed since the proposal was created."
 msgstr ""
 
 msgid "* This field is only for users who, in previous versions (it's not supported anymore), set a password to protect their recovery phrase. This field is not for your encrypt password."
@@ -410,19 +410,19 @@ msgstr "Продолжить"
 msgid "Contribute translations"
 msgstr "Помочь с переводами"
 
-msgid "Copay only supports Bastoji Cash using new version numbers addresses"
-msgstr "Используя новую версию номеров адресов Copay поддерживает только Bastoji Cash"
+msgid "Sqoin only supports Bastoji Cash using new version numbers addresses"
+msgstr "Используя новую версию номеров адресов Sqoin поддерживает только Bastoji Cash"
 
-msgid "Copayer already in this wallet"
+msgid "Sqoiner already in this wallet"
 msgstr "Совладелец кошелька уже присоединился"
 
-msgid "Copayer already voted on this spend proposal"
+msgid "Sqoiner already voted on this spend proposal"
 msgstr "Совладелец уже проголосовал по этому платежу"
 
-msgid "Copayer data mismatch"
+msgid "Sqoiner data mismatch"
 msgstr "Несоответствие данных совладельца кошелька"
 
-msgid "Copayer joined"
+msgid "Sqoiner joined"
 msgstr "Совладелец присоединился"
 
 msgid "Copied to clipboard"
@@ -959,7 +959,7 @@ msgstr "Я понимаю, что мои средства безопасно х�
 msgid "I'm sure"
 msgstr "Я уверен"
 
-msgid "If enabled, Bastoji Cash addresses will be shown using Copay style address, and not the new cashaddr format."
+msgid "If enabled, Bastoji Cash addresses will be shown using Sqoin style address, and not the new cashaddr format."
 msgstr ""
 
 msgid "If enabled, all sensitive information (private key and recovery phrase) and actions (spending and exporting) associated with this wallet will be protected."
@@ -1433,8 +1433,8 @@ msgstr "Пожалуйста, введите ПИН-код"
 msgid "Please tap each word in the correct order."
 msgstr "Тапните каждое слово в правильном порядке."
 
-msgid "Please upgrade Copay to perform this action"
-msgstr "Пожалуйста, обновите Copay для выполнения этого действия"
+msgid "Please upgrade Sqoin to perform this action"
+msgstr "Пожалуйста, обновите Sqoin для выполнения этого действия"
 
 msgid "Please wait..."
 msgstr "Пожалуйста, подождите..."
@@ -1769,7 +1769,7 @@ msgstr "Поделиться Адресом"
 msgid "Share the love by inviting your friends."
 msgstr "Поделитесь любовью и пригласите друзей."
 
-msgid "Share this invitation with your copayers"
+msgid "Share this invitation with your sqoiners"
 msgstr "Отправьте приглашение совладельцам кошелька"
 
 msgid "Share {{appName}}"
@@ -2004,7 +2004,7 @@ msgstr "Баланс кошелька"
 msgid "Total Locked Balance"
 msgstr "Всего заблокировано средств"
 
-msgid "Total number of copayers"
+msgid "Total number of sqoiners"
 msgstr "Количество совладельцев"
 
 msgid "Total wallet inputs"
@@ -2112,7 +2112,7 @@ msgstr "Обновление... Подождите, пожалуйста"
 msgid "Urgent"
 msgstr "Срочно"
 
-msgid "Use Bastoji Cash Copay Style Addresses"
+msgid "Use Bastoji Cash Sqoin Style Addresses"
 msgstr ""
 
 msgid "Use Unconfirmed Funds"
@@ -2181,7 +2181,7 @@ msgstr ""
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "ВНИМАНИЕ: НЕНАДЕЖНЫЙ СЕРТИФИКАТ"
 
-msgid "Waiting for copayers"
+msgid "Waiting for sqoiners"
 msgstr "Ожидание совладельцев кошелька"
 
 msgid "Waiting..."
@@ -2427,7 +2427,7 @@ msgstr "Подготавливается..."
 msgid "{{amountUnitStr}} Gift Card"
 msgstr ""
 
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
+msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Sqoiner synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
 msgstr ""
 
 msgid "{{btx.feeRateStr}} of the total amount"

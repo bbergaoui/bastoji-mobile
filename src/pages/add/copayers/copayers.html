@@ -8,7 +8,7 @@
   <div *ngIf="wallet" [hidden]="wallet.notAuthorized">
     <ion-list class="copayers-secret">
       <ion-item class="list-title">
-        {{ 'Share this invitation with your copayers' | translate }}
+        {{ 'Share this invitation with your sqoiners' | translate }}
       </ion-item>
       <ion-item>
         <div class="qr-code-container" copy-to-clipboard="{{ secret }}">
@@ -29,7 +29,7 @@
     <div [hidden]="!secret">
       <ion-card class="copayers-card">
         <ion-card-header>
-          <span translate>Waiting for copayers</span>
+          <span translate>Waiting for sqoiners</span>
           <span class="gray-color">
             [
             <span translate>{{wallet.m}}-of-{{wallet.n}}</span> ]

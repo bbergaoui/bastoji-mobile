@@ -18,7 +18,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>{{'Total number of copayers' | translate}}</ion-label>
+        <ion-label stacked>{{'Total number of sqoiners' | translate}}</ion-label>
         <ion-select okText="{{okText}}" cancelText="{{cancelText}}" formControlName="totalCopayers" (ionChange)="setTotalCopayers(createForm.value.totalCopayers)">
           <ion-option *ngFor="let copayer of copayers" [value]="copayer">{{copayer}}</ion-option>
         </ion-select>

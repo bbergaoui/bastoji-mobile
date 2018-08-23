@@ -74,7 +74,7 @@ export class SessionLogPage {
 
   public prepareLogs() {
     let log =
-      'Copay Session Logs\n Be careful, this could contain sensitive private data\n\n';
+      'Sqoin Session Logs\n Be careful, this could contain sensitive private data\n\n';
     log += '\n\n';
     log += this.logger
       .get()

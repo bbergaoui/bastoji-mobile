@@ -98,12 +98,12 @@ export class FeedbackPage {
     let url;
     if (this.isAndroid)
       url =
-        this.appName == 'Copay'
+        this.appName == 'Sqoin'
           ? defaults.rateApp.copay.android
           : defaults.rateApp.bitpay.android;
     if (this.isIOS)
       url =
-        this.appName == 'Copay'
+        this.appName == 'Sqoin'
           ? defaults.rateApp.copay.ios
           : defaults.rateApp.bitpay.ios;
 

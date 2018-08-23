@@ -199,7 +199,7 @@ export class CoinbaseProvider {
     this._getNetAmount(amount, (err, reducedAmount) => {
       if (err) return cb(err);
 
-      // Check if transaction has enough funds to transfer bastoji from Coinbase to Copay
+      // Check if transaction has enough funds to transfer bastoji from Coinbase to Sqoin
       if (reducedAmount < 0) {
         return cb('Not enough funds for fee');
       }

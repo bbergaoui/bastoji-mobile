@@ -2,8 +2,8 @@
   "//-": "Changes to this file will be overwritten.",
   "//--": "Modify it's template in the app-template directory.",
 
-  "name": "Copay Bastoji Wallet",
-  "short_name": "Copay",
+  "name": "Sqoin Bastoji Wallet",
+  "short_name": "Sqoin",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [

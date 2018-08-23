@@ -54,7 +54,7 @@ export class ProfileProvider {
     let config = this.configProvider.get();
     let defaults = this.configProvider.getDefaults();
     let defaultColor =
-      this.appProvider.info.nameCase == 'Copay' ? '#1abb9b' : '#647ce8';
+      this.appProvider.info.nameCase == 'Sqoin' ? '#1abb9b' : '#647ce8';
     // this.config.whenAvailable( (config) => { TODO
     wallet.usingCustomBWS =
       config.bwsFor &&
@@ -362,7 +362,7 @@ export class ProfileProvider {
 
       if (!strParsed.n) {
         return reject(
-          'Backup format not recognized. If you are using a Copay Beta backup and version is older than 0.10, please see: https://github.com/bitpay/copay/issues/4730#issuecomment-244522614'
+          'Backup format not recognized. If you are using a Sqoin Beta backup and version is older than 0.10, please see: https://github.com/bitpay/copay/issues/4730#issuecomment-244522614'
         );
       }
 

@@ -157,13 +157,13 @@ export class BastojiCashPage {
       });
     };
 
-    // Multisig wallets? add Copayers
+    // Multisig wallets? add Sqoiners
     function addCopayers(newWallet, isNew, cb) {
       if (!isNew) return cb();
       if (wallet.n == 1) return cb();
 
       this.logger.info(
-        'Adding copayers for BCH wallet config:' + wallet.m + '-' + wallet.n
+        'Adding sqoiners for BCH wallet config:' + wallet.m + '-' + wallet.n
       );
 
       this.walletProvider.copyCopayers(wallet, newWallet, err => {

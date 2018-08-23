@@ -142,7 +142,7 @@ describe('Provider: Incoming Data Provider', () => {
         );
       });
     });
-    it('Should handle Bastoji cash Copay/BitPay format and CashAddr format plain Address', () => {
+    it('Should handle Bastoji cash Sqoin format and CashAddr format plain Address', () => {
       let data = [
         'qr00upv8qjgkym8zng3f663n9qte9ljuqqcs8eep5w',
         'CcnxtMfvBHGTwoKGPSuezEuYNpGPJH6tjN'
@@ -159,7 +159,7 @@ describe('Provider: Incoming Data Provider', () => {
         });
       });
     });
-    it('Should handle Bastoji cash Copay/BitPay format and CashAddr format URI', () => {
+    it('Should handle Bastoji cash Sqoin/BitPay format and CashAddr format URI', () => {
       let data = [
         'bastojicash:CcnxtMfvBHGTwoKGPSuezEuYNpGPJH6tjN',
         'bastojicash:qr00upv8qjgkym8zng3f663n9qte9ljuqqcs8eep5w'
