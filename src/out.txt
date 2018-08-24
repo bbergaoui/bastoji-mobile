@@ -1,0 +1,739 @@
+./app/app.component.ts:import { CoinbaseProvider } from '../providers/coinbase/coinbase';
+./app/app.component.ts:import { CoinbasePage } from '../pages/integrations/coinbase/coinbase';
+./app/app.component.ts:    private coinbaseProvider: CoinbaseProvider,
+./app/app.component.ts:    if (this.appProvider.info._enabledExtensions.coinbase) {
+./app/app.component.ts:      this.coinbaseProvider.setCredentials();
+./app/app.component.ts:      this.coinbaseProvider.register();
+./pages/tx-details/tx-details.ts:      this.wallet.coin === 'bch'
+./pages/tx-details/tx-details.ts:          this.wallet.coin,
+./pages/tx-details/tx-details.ts:          this.wallet.coin,
+./pages/home/home.ts:import { CoinbasePage } from '../integrations/coinbase/coinbase';
+./pages/home/home.ts:        return x.credentials.coin == 'btc';
+./pages/home/home.ts:        return x.credentials.coin == 'bch';
+./pages/paypro/paypro.html:        <div class="amount">{{tx.amount | satToUnit: tx.coin}}</div>
+./pages/paypro/paypro.html:        <div class="alternative">{{tx.amount | satToFiat: tx.coin}}</div>
+./pages/txp-details/txp-details.ts:      this.wallet.coin,
+./pages/txp-details/txp-details.ts:      this.wallet.coin,
+./pages/txp-details/txp-details.ts:          this.tx.coin,
+./pages/txp-details/txp-details.ts:          this.wallet.coin,
+./pages/send/send.ts:    this.walletsBtc = this.profileProvider.getWallets({ coin: 'btc' });
+./pages/send/send.ts:    this.walletsBch = this.profileProvider.getWallets({ coin: 'bch' });
+./pages/send/send.ts:          this.sendPaymentToAddress(data.value, data.coin);
+./pages/send/send.ts:  private sendPaymentToAddress(bastojiAddress: string, coin: string): void {
+./pages/send/send.ts:    this.navCtrl.push(AmountPage, { toAddress: bastojiAddress, coin });
+./pages/send/send.ts:        coin: v.coin,
+./pages/send/send.ts:        coin: v.coin,
+./pages/send/send.ts:          coin: this.addressProvider.validateAddress(k).coin,
+./pages/send/send.ts:          coin: item.coin,
+./pages/send/choose-fee-level/choose-fee-level.ts:  public coin: string;
+./pages/send/choose-fee-level/choose-fee-level.ts:      .getFeeLevels(this.coin)
+./pages/send/confirm/confirm.html:          <div class="amount">{{tx.amount | satToUnit: tx.coin}}</div>
+./pages/send/confirm/confirm.html:          <div class="alternative">{{tx.amount | satToFiat: tx.coin}}</div>
+./pages/send/confirm/confirm.html:        <span class="fee-amount">{{tx.txp[wallet.id].fee | satToUnit: tx.coin}}</span>
+./pages/send/confirm/confirm.html:          {{tx.txp[wallet.id].fee | satToFiat: tx.coin}}
+./pages/send/confirm/confirm.spec.ts:      instance.tx = { coin: 'BTJ' };
+./pages/send/confirm/confirm.spec.ts:          coin: 'BTJ',
+./pages/send/confirm/confirm.spec.ts:        const txp = { coin: 'BTJ' };
+./pages/send/confirm/confirm.spec.ts:      const txp = { coin: 'BTJ' };
+./pages/send/confirm/confirm.ts:    let B = this.navParams.data.coin == 'bch' ? this.bitcoreCash : this.bitcore;
+./pages/send/confirm/confirm.ts:      coin: this.navParams.data.coin,
+./pages/send/confirm/confirm.ts:        this.tx.coin && this.tx.coin == 'bch' ? 'normal ' : this.configFeeLevel;
+./pages/send/confirm/confirm.ts:    if (this.tx.coin && this.tx.coin == 'bch') {
+./pages/send/confirm/confirm.ts:    this.setWalletSelector(this.tx.coin, this.tx.network, this.tx.amount)
+./pages/send/confirm/confirm.ts:    coin: string,
+./pages/send/confirm/confirm.ts:        coin
+./pages/send/confirm/confirm.ts:    this.tx.coin = this.wallet.coin;
+./pages/send/confirm/confirm.ts:      this.tx.feeLevel = wallet.coin == 'bch' ? 'normal' : this.configFeeLevel;
+./pages/send/confirm/confirm.ts:          wallet.coin,
+./pages/send/confirm/confirm.ts:            ? maxAllowedMerchantFee[wallet.coin]
+./pages/send/confirm/confirm.ts:          '{{fee}} {{coin}} will be deducted for bastoji networking fees.'
+./pages/send/confirm/confirm.ts:        { fee: sendMaxInfo.fee / 1e8, coin: this.tx.coin.toUpperCase() }
+./pages/send/confirm/confirm.ts:          'A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided.'
+./pages/send/confirm/confirm.ts:        { amountBelowFeeStr, coin: this.tx.coin.toUpperCase() }
+./pages/send/confirm/confirm.ts:          'A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded.'
+./pages/send/confirm/confirm.ts:        { amountAboveMaxSizeStr, coin: this.tx.coin.toUpperCase() }
+./pages/send/confirm/confirm.ts:      this.txFormatProvider.formatToUSD(wallet.coin, txp.amount).then(val => {
+./pages/send/confirm/confirm.ts:        let unit = txp.coin.toUpperCase();
+./pages/send/confirm/confirm.ts:    if (this.tx.coin == 'bch') return;
+./pages/send/confirm/confirm.ts:      coin: this.tx.coin,
+./pages/send/amount/amount.ts:import { BuyCoinbasePage } from '../../integrations/coinbase/buy-coinbase/buy-coinbase';
+./pages/send/amount/amount.ts:import { SellCoinbasePage } from '../../integrations/coinbase/sell-coinbase/sell-coinbase';
+./pages/send/amount/amount.ts:    if (this.navParams.data.coin) {
+./pages/send/amount/amount.ts:      let coins = this.navParams.data.coin.split(',');
+./pages/send/amount/amount.ts:      _.each(coins, (c: string) => {
+./pages/send/amount/amount.ts:        let coin = _.find(this.availableUnits, {
+./pages/send/amount/amount.ts:        if (!coin) {
+./pages/send/amount/amount.ts:            'Could not find desired coin:' + this.navParams.data.coin
+./pages/send/amount/amount.ts:          newAvailableUnits.push(coin);
+./pages/send/amount/amount.ts:  private fromFiat(val, coin?: string): number {
+./pages/send/amount/amount.ts:    coin = coin || this.availableUnits[this.altUnitIndex].id;
+./pages/send/amount/amount.ts:        this.rateProvider.fromFiat(val, this.fiatCode, coin) * this.satToUnit
+./pages/send/amount/amount.ts:    let coin = unit.id;
+./pages/send/amount/amount.ts:      coin = this.availableUnits[this.altUnitIndex].id;
+./pages/send/amount/amount.ts:        coin,
+./pages/send/amount/amount.ts:        coin,
+./pages/send/amount/amount.ts:      'Update unit coin @amount unit:' +
+./pages/scan/scan.ts:          this.sendPaymentToAddress(data.value, data.coin);
+./pages/scan/scan.ts:  private sendPaymentToAddress(bastojiAddress: string, coin: string): void {
+./pages/scan/scan.ts:    this.navCtrl.push(AmountPage, { toAddress: bastojiAddress, coin });
+./pages/integrations/glidera/glidera.ts:      coin: 'btc',
+./pages/integrations/glidera/glidera.ts:      coin: 'btc',
+./pages/integrations/glidera/buy-glidera/buy-glidera.ts:  private coin: string;
+./pages/integrations/glidera/buy-glidera/buy-glidera.ts:    this.coin = 'btc';
+./pages/integrations/glidera/buy-glidera/buy-glidera.ts:      coin: this.coin
+./pages/integrations/glidera/buy-glidera/buy-glidera.ts:      this.coin,
+./pages/integrations/glidera/sell-glidera/sell-glidera.ts:  private coin: string;
+./pages/integrations/glidera/sell-glidera/sell-glidera.ts:    this.coin = 'btc';
+./pages/integrations/glidera/sell-glidera/sell-glidera.ts:      coin: this.coin
+./pages/integrations/glidera/sell-glidera/sell-glidera.ts:      this.coin,
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:    let coin;
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:    if (this.currency == 'BTJ') coin = 'btc';
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:    else if (this.currency == 'BCH') coin = 'bch';
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:    else coin = null;
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:          coin
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:  private updateRates(coin: string) {
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:      coin.toUpperCase(),
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:  private satToFiat(coin: string, sat: number): Promise<any> {
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:        .toFiat(coin, sat, this.currencyIsoCode)
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:    this.satToFiat(wallet.coin, amountSat).then((a: string) => {
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:      this.satToFiat(wallet.coin, invoiceFeeSat).then((i: string) => {
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:        this.satToFiat(wallet.coin, networkFeeSat).then((n: string) => {
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:    let COIN = wallet.coin.toUpperCase();
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:    let COIN = wallet.coin.toUpperCase();
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:        .getPayProDetails(payProUrl, wallet.coin)
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:          if (wallet.coin && wallet.coin == 'bch') {
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:        .getCurrentFeeRate(wallet.coin, wallet.credentials.network)
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:    let COIN = wallet.coin.toUpperCase();
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:              currency: wallet.coin.toUpperCase(),
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:              buyerSelectedTransactionCurrency: wallet.coin.toUpperCase()
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:    let COIN = wallet.coin.toUpperCase();
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:      buyerSelectedTransactionCurrency: wallet.coin.toUpperCase()
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:              wallet.coin,
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:    this.updateRates(wallet.coin);
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.ts:          wallet.coin,
+./pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup.html:            @ {{rate | currency:currencySymbol:2}} {{currencyIsoCode}} per {{wallet.coin.toUpperCase()}}
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:  private satToFiat(coin: string, sat: number): Promise<any> {
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:        .toFiat(coin, sat, this.currencyIsoCode)
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:    this.satToFiat(wallet.coin, amountSat).then((a: string) => {
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:      this.satToFiat(wallet.coin, invoiceFeeSat).then((i: string) => {
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:        this.satToFiat(wallet.coin, networkFeeSat).then((n: string) => {
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:    let COIN = wallet.coin.toUpperCase();
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:    let COIN = wallet.coin.toUpperCase();
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:        .getPayProDetails(payProUrl, wallet.coin)
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:          if (wallet.coin && wallet.coin == 'bch') {
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:    let COIN = wallet.coin.toUpperCase();
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:      wallet.coin,
+./pages/integrations/mercado-libre/buy-mercado-libre/buy-mercado-libre.ts:              wallet.coin,
+./pages/integrations/coinbase/coinbase-tx-details/coinbase-tx-details.scss:page-coinbase-tx-details {
+./pages/integrations/coinbase/coinbase-tx-details/coinbase-tx-details.ts:import { CoinbaseProvider } from '../../../../providers/coinbase/coinbase';
+./pages/integrations/coinbase/coinbase-tx-details/coinbase-tx-details.ts:  selector: 'page-coinbase-tx-details',
+./pages/integrations/coinbase/coinbase-tx-details/coinbase-tx-details.ts:  templateUrl: 'coinbase-tx-details.html'
+./pages/integrations/coinbase/coinbase-tx-details/coinbase-tx-details.ts:    public coinbaseProvider: CoinbaseProvider,
+./pages/integrations/coinbase/coinbase-tx-details/coinbase-tx-details.ts:    this.coinbaseProvider.setCredentials();
+./pages/integrations/coinbase/coinbase-tx-details/coinbase-tx-details.ts:        this.coinbaseProvider.savePendingTransaction(
+./pages/integrations/coinbase/coinbase.html:    <img margin src="assets/img/coinbase/coinbase-logo.png" width="200">
+./pages/integrations/coinbase/coinbase.html:      <img margin src="assets/img/coinbase/coinbase-logo-white.svg" (click)="updateTransactions()">
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:import { CoinbasePage } from '../coinbase';
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:import { CoinbaseProvider } from '../../../../providers/coinbase/coinbase';
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:  selector: 'page-sell-coinbase',
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:  templateUrl: 'sell-coinbase.html'
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:  private coin: string;
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:    private coinbaseProvider: CoinbaseProvider,
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:    this.coin = 'btc';
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:    this.priceSensitivity = this.coinbaseProvider.priceSensitivity;
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:      data: this.coinbaseProvider.selectedPriceSensitivity
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:    this.network = this.coinbaseProvider.getNetwork();
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:      coin: this.coin
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:    this.coinbaseProvider.init((err, res) => {
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:        this.showErrorAndBack(this.coinbaseProvider.getErrorsAsString(err));
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:      this.coinbaseProvider.sellPrice(
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:        this.coinbaseProvider.getAvailableCurrency(),
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:      this.coinbaseProvider.getPaymentMethods(accessToken, (err, p) => {
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:          this.showErrorAndBack(this.coinbaseProvider.getErrorsAsString(err));
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:            'https://support.coinbase.com/customer/portal/articles/1148716-payment-methods-for-us-customers';
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:      this.coinbaseProvider.init((err, res) => {
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:        this.coinbaseProvider.sellPrice(
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:          this.coinbaseProvider.getAvailableCurrency(),
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:              this.logger.debug(this.coinbaseProvider.getErrorsAsString(err));
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:            this.coinbaseProvider.getTransactions(
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:                    this.coinbaseProvider.getErrorsAsString(err)
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:                let coinbaseTransactions = ctxs.data;
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:                for (let i = 0; i < coinbaseTransactions.length; i++) {
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:                  ctx = coinbaseTransactions[i];
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:                    this.coinbaseProvider.savePendingTransaction(
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:                            this.coinbaseProvider.getErrorsAsString(err)
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:    this.coinbaseProvider.init((err, res) => {
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:        this.showErrorAndBack(this.coinbaseProvider.getErrorsAsString(err));
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:      this.coinbaseProvider.sellRequest(
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:            this.showErrorAndBack(this.coinbaseProvider.getErrorsAsString(err));
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:        this.coinbaseProvider.init((err, res) => {
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:            this.showError(this.coinbaseProvider.getErrorsAsString(err));
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:          this.coinbaseProvider.createAddress(
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:                this.showError(this.coinbaseProvider.getErrorsAsString(err));
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:      this.coin,
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.ts:        { coin: 'btc' },
+./pages/integrations/coinbase/sell-coinbase/sell-coinbase.scss:page-sell-coinbase {
+./pages/integrations/coinbase/coinbase.scss:page-coinbase {
+./pages/integrations/coinbase/coinbase.ts:import { CoinbaseProvider } from '../../../providers/coinbase/coinbase';
+./pages/integrations/coinbase/coinbase.ts:import { CoinbaseTxDetailsPage } from './coinbase-tx-details/coinbase-tx-details';
+./pages/integrations/coinbase/coinbase.ts:  selector: 'page-coinbase',
+./pages/integrations/coinbase/coinbase.ts:  templateUrl: 'coinbase.html'
+./pages/integrations/coinbase/coinbase.ts:    private coinbaseProvider: CoinbaseProvider,
+./pages/integrations/coinbase/coinbase.ts:      this.coinbaseProvider.getStoredToken((at: string) => {
+./pages/integrations/coinbase/coinbase.ts:    this.currency = this.coinbaseProvider.getAvailableCurrency();
+./pages/integrations/coinbase/coinbase.ts:    this.coinbaseProvider.getStoredToken((at: string) => {
+./pages/integrations/coinbase/coinbase.ts:      this.coinbaseProvider.init((err, data) => {
+./pages/integrations/coinbase/coinbase.ts:                  this.coinbaseProvider.logout();
+./pages/integrations/coinbase/coinbase.ts:        this.coinbaseProvider.buyPrice(
+./pages/integrations/coinbase/coinbase.ts:            this.coinbaseProvider.sellPrice(
+./pages/integrations/coinbase/coinbase.ts:    this.coinbaseProvider.getPendingTransactions(this.pendingTransactions);
+./pages/integrations/coinbase/coinbase.ts:    this.coinbaseProvider.getToken(code, (err: string, accessToken: string) => {
+./pages/integrations/coinbase/coinbase.ts:    return this.coinbaseProvider.getOauthCodeUrl();
+./pages/integrations/coinbase/coinbase.ts:    let url = this.coinbaseProvider.getSignupUrl();
+./pages/integrations/coinbase/coinbase.ts:    let url = this.coinbaseProvider.getSupportUrl();
+./pages/integrations/coinbase/coinbase.ts:      'You can email support@coinbase.com for direct support, or you can view their help center.';
+./pages/integrations/coinbase/coinbase.ts:      coin: 'btc',
+./pages/integrations/coinbase/coinbase.ts:      coin: 'btc',
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:import { CoinbaseProvider } from '../../../../providers/coinbase/coinbase';
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:import { CoinbasePage } from '../coinbase';
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:  selector: 'page-buy-coinbase',
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:  templateUrl: 'buy-coinbase.html'
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:  private coin: string;
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:    private coinbaseProvider: CoinbaseProvider,
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:    this.coin = 'btc';
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:    this.network = this.coinbaseProvider.getNetwork();
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:      coin: this.coin
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:    this.coinbaseProvider.init((err, res) => {
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:      this.coinbaseProvider.buyPrice(
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:        this.coinbaseProvider.getAvailableCurrency(),
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:      this.coinbaseProvider.getPaymentMethods(accessToken, (err, p) => {
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:            'https://support.coinbase.com/customer/portal/articles/1148716-payment-methods-for-us-customers';
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:    this.coinbaseProvider.init((err, res) => {
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:      this.coinbaseProvider.buyRequest(
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:        this.coinbaseProvider.init((err, res) => {
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:            this.showError(this.coinbaseProvider.getErrorsAsString(err));
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:          this.coinbaseProvider.buyRequest(
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:                this.showError(this.coinbaseProvider.getErrorsAsString(err));
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:    this.coinbaseProvider.getTransaction(
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:          this.showError(this.coinbaseProvider.getErrorsAsString(err));
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:            this.coinbaseProvider.savePendingTransaction(
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:    this.coinbaseProvider.getBuyOrder(
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:          this.showError(this.coinbaseProvider.getErrorsAsString(err));
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:      this.coin,
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:    this.coinbaseProvider.checkEnoughFundsForFee(this.amount, err => {
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.ts:        { coin: 'btc' },
+./pages/integrations/coinbase/buy-coinbase/buy-coinbase.scss:page-buy-coinbase {
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.scss:page-coinbase-settings {
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.html:  <ion-list *ngIf="coinbaseAccount && coinbaseAccount.balance">
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.html:        {{coinbaseAccount.id}}
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.html:        {{coinbaseAccount.name}}
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.html:        {{coinbaseAccount.balance.amount}} {{coinbaseAccount.balance.currency}}
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.html:  <ion-list *ngIf="coinbaseUser">
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.html:        {{coinbaseUser.id}}
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.html:        {{coinbaseUser.email}}
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:import { CoinbaseProvider } from '../../../../providers/coinbase/coinbase';
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:  selector: 'page-coinbase-settings',
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:  templateUrl: 'coinbase-settings.html'
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:  private serviceName: string = 'coinbase';
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:  public coinbaseAccount;
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:  public coinbaseUser;
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:    private coinbaseProvider: CoinbaseProvider,
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:    this.coinbaseProvider.init((err, data) => {
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:                this.coinbaseProvider.logout();
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:      this.coinbaseProvider.getAccount(accessToken, accountId, (_, account) => {
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:        this.coinbaseAccount = account.data[0];
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:      this.coinbaseProvider.getCurrentUser(accessToken, (_, user) => {
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:        this.coinbaseUser = user.data;
+./pages/integrations/coinbase/coinbase-settings/coinbase-settings.ts:          this.coinbaseProvider.logout();
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.ts:      coin: 'btc'
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.ts:      coin: 'bch'
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.ts:      this.fromWallet.coin == 'btc' ? this.walletsBch : this.walletsBtc;
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.ts:    let pair = this.fromWallet.coin + '_' + this.toWallet.coin;
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.ts:      coin: this.fromWallet.coin,
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.ts:      shiftMax: this.limit.limit + ' ' + this.fromWallet.coin.toUpperCase(),
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.ts:      shiftMin: this.limit.minimum + ' ' + this.fromWallet.coin.toUpperCase()
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.html:        <img item-end *ngIf="fromWallet.coin == 'btc'" src="assets/img/icon-bastoji.svg" width="18">
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.html:        <img item-end *ngIf="fromWallet.coin == 'bch'" src="assets/img/bastoji-cash-logo.svg" width="22">
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.html:        <img item-end *ngIf="toWallet.coin == 'btc'" src="assets/img/icon-bastoji.svg" width="18">
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.html:        <img item-end *ngIf="toWallet.coin == 'bch'" src="assets/img/bastoji-cash-logo.svg" width="22">
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.html:          {{rate.rate}} {{toWallet.coin | uppercase}} per {{fromWallet.coin | uppercase}}
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.html:          {{limit.minimum}} {{fromWallet.coin | uppercase}}
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.html:          {{limit.limit}} {{fromWallet.coin | uppercase}}
+./pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift.html:          {{limit.minerFee}} {{toWallet.coin | uppercase}}
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:          this.fromWallet.coin,
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:  private satToFiat(coin: string, sat: number, isoCode: string): Promise<any> {
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:      this.txFormatProvider.toFiat(coin, sat, isoCode).then(value => {
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:      this.toWallet.coin,
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:        this.fromWallet.coin,
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:        this.satToFiat(this.fromWallet.coin, feeSat, this.currencyIsoCode).then(
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:          this.toWallet.coin.toUpperCase() +
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:          this.fromWallet.coin.toUpperCase(),
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:          this.fromWallet.coin.toUpperCase() +
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:          this.toWallet.coin.toUpperCase(),
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:        transaction: st.transaction || null, // Transaction ID of coin sent to withdrawal address
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:        this.fromWallet.coin.toUpperCase() +
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:        this.toWallet.coin.toUpperCase();
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:          '{{fee}} {{coin}} will be deducted for bastoji networking fees.'
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:        { fee, coin: this.fromWallet.coin.toUpperCase() }
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:          'A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided.'
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:        { fee: amountBelowFeeStr, coin: this.fromWallet.coin.toUpperCase() }
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:          'A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded.'
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:        { fee: amountAboveMaxSizeStr, coin: this.fromWallet.coin.toUpperCase() }
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:  private getLegacyAddressFormat(addr: string, coin: string): string {
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:    if (coin == 'btc') return addr;
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:  private getNewAddressFormat(addr: string, coin: string): string {
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:    if (coin == 'btc') return addr;
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:    return this.fromWallet.coin + '_' + this.toWallet.coin;
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:          this.toWallet.coin
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:              this.fromWallet.coin
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:                this.fromWallet.coin
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:                        this.fromWallet.coin,
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:                        this.toWallet.coin,
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:                        this.fromWallet.coin,
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:                        this.fromWallet.coin,
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:    let fromCoin = this.fromWallet.coin.toUpperCase();
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.ts:    let toCoin = this.toWallet.coin.toUpperCase();
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.html:        <img item-end *ngIf="fromWallet.coin == 'btc'" src="assets/img/icon-bastoji.svg" width="18">
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.html:        <img item-end *ngIf="fromWallet.coin == 'bch'" src="assets/img/bastoji-cash-logo.svg" width="22">
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.html:        <img item-end *ngIf="toWallet.coin == 'btc'" src="assets/img/icon-bastoji.svg" width="18">
+./pages/integrations/shapeshift/shapeshift-confirm/shapeshift-confirm.html:        <img item-end *ngIf="toWallet.coin == 'bch'" src="assets/img/bastoji-cash-logo.svg" width="22">
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:  private satToFiat(coin: string, sat: number): Promise<any> {
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:        .toFiat(coin, sat, this.currencyIsoCode)
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:    this.satToFiat(wallet.coin, amountSat).then((a: string) => {
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:      this.satToFiat(wallet.coin, invoiceFeeSat).then((i: string) => {
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:        this.satToFiat(wallet.coin, networkFeeSat).then((n: string) => {
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:    let COIN = wallet.coin.toUpperCase();
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:    let COIN = wallet.coin.toUpperCase();
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:        .getPayProDetails(payProUrl, wallet.coin)
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:          if (wallet.coin && wallet.coin == 'bch') {
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:    let COIN = wallet.coin.toUpperCase();
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:      wallet.coin,
+./pages/integrations/amazon/buy-amazon/buy-amazon.ts:              wallet.coin,
+./pages/add/import-wallet/import-wallet.html:      <ion-select okText="{{okText}}" cancelText="{{cancelText}}" placeholder="{{'Select a coin' | translate}}" formControlName="coin">
+./pages/add/import-wallet/import-wallet.html:            <span translate>WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis.</span>
+./pages/add/import-wallet/import-wallet.spec.ts:        coin: 'btc',
+./pages/add/import-wallet/import-wallet.spec.ts:      instance.importForm.controls['coin'].setValue(info.coin);
+./pages/add/import-wallet/import-wallet.spec.ts:        coin: 'btc',
+./pages/add/import-wallet/import-wallet.spec.ts:      instance.importForm.controls['coin'].setValue(info.coin);
+./pages/add/import-wallet/import-wallet.spec.ts:        coin: 'btc',
+./pages/add/import-wallet/import-wallet.spec.ts:      instance.importForm.controls['coin'].setValue(info.coin);
+./pages/add/import-wallet/import-wallet.spec.ts:        coin: 'btc',
+./pages/add/import-wallet/import-wallet.spec.ts:      instance.importForm.controls['coin'].setValue(info.coin);
+./pages/add/import-wallet/import-wallet.ts:      coin: [null, Validators.required]
+./pages/add/import-wallet/import-wallet.ts:        this.importForm.get('coin').setValidators([Validators.required]);
+./pages/add/import-wallet/import-wallet.ts:        this.importForm.get('coin').clearValidators();
+./pages/add/import-wallet/import-wallet.ts:    this.importForm.get('coin').updateValueAndValidity();
+./pages/add/import-wallet/import-wallet.ts:      coin: parsedCode[5]
+./pages/add/import-wallet/import-wallet.ts:    this.importForm.controls['coin'].setValue(info.coin);
+./pages/add/import-wallet/import-wallet.ts:      opts.coin = this.importForm.value.coin;
+./pages/add/import-wallet/import-wallet.ts:    opts.coin = this.importForm.value.coin;
+./pages/add/import-wallet/import-wallet.ts:        opts.coin = this.importForm.value.coin;
+./pages/add/join-wallet/join-wallet.html:      <ion-select okText="{{okText}}" cancelText="{{cancelText}}" placeholder="{{'Select a coin' | translate}}" formControlName="coin">
+./pages/add/join-wallet/join-wallet.ts:      coin: [null, Validators.required]
+./pages/add/join-wallet/join-wallet.ts:      coin: this.joinForm.value.coin
+./pages/add/create-wallet/create-wallet.html:      <ion-select okText="{{okText}}" cancelText="{{cancelText}}" placeholder="{{'Select a coin' | translate}}" formControlName="coin">
+./pages/add/create-wallet/create-wallet.html:          <span translate>WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis.</span>
+./pages/add/create-wallet/create-wallet.ts:      coin: [null, Validators.required]
+./pages/add/create-wallet/create-wallet.ts:      coin: this.createForm.value.coin
+./pages/add/create-wallet/create-wallet.spec.ts:        coin: 'btc',
+./pages/add/create-wallet/create-wallet.spec.ts:      instance.createForm.value.coin = 'btc';
+./pages/settings/addressbook/view/view.ts:  private coin: string;
+./pages/settings/addressbook/view/view.ts:    this.coin = cashAddress ? 'bch' : 'btc';
+./pages/settings/addressbook/view/view.ts:      coin: this.coin,
+./pages/settings/settings.ts:import { CoinbaseSettingsPage } from '../integrations/coinbase/coinbase-settings/coinbase-settings';
+./pages/settings/settings.ts:      coin: 'btc'
+./pages/settings/settings.ts:      coin: 'bch'
+./pages/settings/settings.ts:      case 'coinbase':
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-addresses/wallet-addresses.html:        <p class="info">{{w.amount | satToUnit: wallet.coin}}</p>
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-addresses/wallet-addresses.ts:            this.wallet.coin,
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-addresses/wallet-addresses.ts:            this.wallet.coin,
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-addresses/wallet-addresses.ts:            this.wallet.coin,
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-addresses/wallet-addresses.ts:      coin: this.wallet.coin,
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-addresses/all-addresses/all-addresses.ts:  public coin: string;
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-addresses/all-addresses/all-addresses.ts:    this.coin = this.navParams.data.coin;
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-addresses/all-addresses/all-addresses.html:        {{w.amount | satToUnit: coin}}
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-information/wallet-information.ts:  public coin: string;
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-information/wallet-information.ts:    this.coin = this.wallet.coin;
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-information/wallet-information.html:        {{coin}}
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-transaction-history/wallet-transaction-history.ts:    this.currency = this.wallet.coin.toUpperCase();
+./pages/settings/wallet-settings/wallet-settings-advanced/bastoji-cash/bastoji-cash.ts:      coin: 'bch',
+./pages/settings/wallet-settings/wallet-settings-advanced/bastoji-cash/bastoji-cash.ts:      .getBalance(this.availableWallet, { coin: 'bch' })
+./pages/settings/wallet-settings/wallet-settings-advanced/bastoji-cash/bastoji-cash.ts:      coin: 'bch',
+./pages/settings/wallet-settings/wallet-settings-advanced/wallet-settings-advanced.html:    <button ion-item *ngIf="wallet && wallet.network == 'livenet' && wallet.isComplete() && wallet.coin == 'btc'" (click)="openBastojiCashPage()">
+./pages/pages.ts:import { BuyCoinbasePage } from '../pages/integrations/coinbase/buy-coinbase/buy-coinbase';
+./pages/pages.ts:import { CoinbasePage } from '../pages/integrations/coinbase/coinbase';
+./pages/pages.ts:import { CoinbaseSettingsPage } from '../pages/integrations/coinbase/coinbase-settings/coinbase-settings';
+./pages/pages.ts:import { CoinbaseTxDetailsPage } from '../pages/integrations/coinbase/coinbase-tx-details/coinbase-tx-details';
+./pages/pages.ts:import { SellCoinbasePage } from '../pages/integrations/coinbase/sell-coinbase/sell-coinbase';
+./pages/wallet-details/wallet-details.html:                  <span [ngClass]="{'received': tx.action == 'received'}" *ngIf="tx.action != 'invalid'">{{tx.amount | satToUnit: wallet.coin}}</span>
+./pages/wallet-details/search-tx-modal/search-tx-modal.html:              <span [ngClass]="{'received': tx.action == 'received'}" *ngIf="tx.action != 'invalid'">{{tx.amount | satToUnit: wallet.coin}}</span>
+./pages/paper-wallet/paper-wallet.html:        {{b.balance | satToUnit: b.coin}}
+./pages/paper-wallet/paper-wallet.ts:  // All coins for which we have a usable wallet to sweep to
+./pages/paper-wallet/paper-wallet.ts:  public coins: string[];
+./pages/paper-wallet/paper-wallet.ts:    this.coins = _.uniq(
+./pages/paper-wallet/paper-wallet.ts:      _.map(this.wallets, (wallet: Partial<WalletOptions>) => wallet.coin)
+./pages/paper-wallet/paper-wallet.ts:    coin: string,
+./pages/paper-wallet/paper-wallet.ts:    this.wallet.getBalanceFromPrivateKey(privateKey, coin, cb);
+./pages/paper-wallet/paper-wallet.ts:  private _scanFunds(coin: string): Promise<any> {
+./pages/paper-wallet/paper-wallet.ts:          this.getBalance(privateKey, coin, (err, balance: number) => {
+./pages/paper-wallet/paper-wallet.ts:            return resolve({ privateKey, coin, balance });
+./pages/paper-wallet/paper-wallet.ts:    let scans = _.map(this.coins, (coin: string) => this._scanFunds(coin));
+./pages/paper-wallet/paper-wallet.ts:          available[b.coin] = nonzero;
+./pages/paper-wallet/paper-wallet.ts:        this.wallets = _.filter(_.clone(this.wallets), w => available[w.coin]);
+./pages/paper-wallet/paper-wallet.ts:        return b.coin === this.wallet.coin;
+./pages/paper-wallet/paper-wallet.ts:            coin?: any;
+./pages/paper-wallet/paper-wallet.ts:          opts.coin = balanceToSweep.coin;
+./pages/paper-wallet/paper-wallet.ts:                .getCurrentFeeRate(balanceToSweep.coin, 'livenet')
+./pages/paper-wallet/paper-wallet.ts:                          coin: balanceToSweep.coin
+./pages/backup/backup-game/backup-game.html:      <span *ngIf="wallet.coin == 'bch'" translate>
+./pages/receive/receive.ts:      coin: this.wallet.coin,
+./pages/receive/receive.html:            <img *ngIf="wallet.coin == 'btc'" src="assets/img/icon-bastoji.svg" alt="BTJ" width="18" />
+./pages/receive/receive.html:            <img *ngIf="wallet.coin == 'bch'" src="assets/img/bastoji-cash-logo.svg" alt="BCH" width="22" /> {{ address }}
+./pages/receive/custom-amount/custom-amount.ts:        this.wallet.coin,
+./pages/receive/custom-amount/custom-amount.ts:          this.wallet.coin,
+./pages/receive/custom-amount/custom-amount.ts:          this.wallet.coin.toUpperCase()
+./pages/receive/custom-amount/custom-amount.ts:          this.wallet.coin,
+./pages/includes/wallet-item/wallet-item.html:      <span *ngIf="wallet.coin == 'btc'">Bastoji Wallet (BTJ)</span>
+./pages/includes/wallet-item/wallet-item.html:      <span *ngIf="wallet.coin == 'bch'">Bastoji Cash Wallet (BCH)</span>
+./pages/includes/wallet-activity/wallet-activity.html:      {{notification.data.amount | satToUnit: notification.wallet.coin}}
+./pages/includes/incoming-data-menu/incoming-data-menu.ts:  public coin: string;
+./pages/includes/incoming-data-menu/incoming-data-menu.ts:      this.coin = data.coin;
+./pages/includes/incoming-data-menu/incoming-data-menu.ts:      let coin = this.coin ? this.coin : 'btc';
+./pages/includes/incoming-data-menu/incoming-data-menu.ts:        coin
+./pages/includes/wallet-selector/wallet-selector.ts:        if (this.wallets[i].coin == 'btc')
+./pages/includes/txp/txp.html:      <span *ngIf="tx.action != 'invalid'">{{tx.amount | satToUnit: tx.coin}}</span>
+./pipes/satToUnit.ts:  transform(amount: number, coin: string) {
+./pipes/satToUnit.ts:      coin.toUpperCase()
+./pipes/fiatToUnit.ts:  transform(amount: number, coin: string, alternative?: string) {
+./pipes/fiatToUnit.ts:      coin.toLowerCase()
+./pipes/fiatToUnit.ts:      coin.toUpperCase()
+./pipes/satToFiat.ts:  transform(amount: number, coin: string) {
+./pipes/satToFiat.ts:      coin.toLowerCase()
+./providers/fee/fee.ts:    coin: string;
+./providers/fee/fee.ts:    coin: ''
+./providers/fee/fee.ts:    coin: string,
+./providers/fee/fee.ts:      this.getFeeLevels(coin)
+./providers/fee/fee.ts:  public getCurrentFeeRate(coin: string, network: string): Promise<any> {
+./providers/fee/fee.ts:      this.getFeeRate(coin, network, this.getCurrentFeeLevel())
+./providers/fee/fee.ts:  public getFeeLevels(coin: string): Promise<any> {
+./providers/fee/fee.ts:      coin = coin || 'btc';
+./providers/fee/fee.ts:        this.cache.coin == coin &&
+./providers/fee/fee.ts:        coin,
+./providers/fee/fee.ts:              this.cache.coin = coin;
+./providers/paypro/paypro.ts:    coin: string,
+./providers/paypro/paypro.ts:        coin
+./providers/address/address.ts:      coin: this.getCoin(address),
+./providers/bitpay-card/bitpay-card.ts:  public getRatesFromCoin(coin, currency, cb) {
+./providers/bitpay-card/bitpay-card.ts:      '/rates/' + coin + '/' + currency,
+./providers/bitpay-card/bitpay-card.ts:  5972: 'coins',
+./providers/bitpay-card/bitpay-card.ts:  7995: 'coins',
+./providers/profile/profile.spec.ts:        coin: 'btc',
+./providers/profile/profile.spec.ts:        coin: 'bch',
+./providers/profile/profile.spec.ts:        coin: 'btc',
+./providers/profile/profile.spec.ts:        coin: 'btc',
+./providers/profile/profile.spec.ts:        coin: 'bch',
+./providers/profile/profile.ts:    wallet.coin = wallet.credentials.coin;
+./providers/profile/profile.ts:          coin: opts.coin
+./providers/profile/profile.ts:          coin: opts.coin
+./providers/profile/profile.ts:            coin: opts.coin
+./providers/profile/profile.ts:            coin: opts.coin
+./providers/profile/profile.ts:              coin: opts.coin
+./providers/profile/profile.ts:            coin: opts.coin
+./providers/profile/profile.ts:              coin: opts.coin
+./providers/profile/profile.ts:                coin: opts.coin
+./providers/profile/profile.ts:              coin: opts.coin
+./providers/profile/profile.ts:      opts.coin = 'btc';
+./providers/profile/profile.ts:    if (opts.coin) {
+./providers/profile/profile.ts:        return x.credentials.coin == opts.coin;
+./providers/incoming-data/incoming-data.ts:      let coin = data.indexOf('bastojicash') === 0 ? 'bch' : 'btc';
+./providers/incoming-data/incoming-data.ts:        .getPayProDetails(data, coin)
+./providers/incoming-data/incoming-data.ts:          this.handlePayPro(details, coin);
+./providers/incoming-data/incoming-data.ts:    let coin: string;
+./providers/incoming-data/incoming-data.ts:      coin = 'btc';
+./providers/incoming-data/incoming-data.ts:          .getPayProDetails(parsed.r, coin)
+./providers/incoming-data/incoming-data.ts:            this.handlePayPro(details, coin);
+./providers/incoming-data/incoming-data.ts:            if (addr && amount) this.goSend(addr, amount, message, coin);
+./providers/incoming-data/incoming-data.ts:        this.goSend(addr, amount, message, coin);
+./providers/incoming-data/incoming-data.ts:      coin = 'bch';
+./providers/incoming-data/incoming-data.ts:          .getPayProDetails(parsed.r, coin)
+./providers/incoming-data/incoming-data.ts:            this.handlePayPro(details, coin);
+./providers/incoming-data/incoming-data.ts:            if (addr && amount) this.goSend(addr, amount, message, coin);
+./providers/incoming-data/incoming-data.ts:        this.goSend(addr, amount, message, coin);
+./providers/incoming-data/incoming-data.ts:      coin = 'bch';
+./providers/incoming-data/incoming-data.ts:            .getPayProDetails(parsed.r, coin)
+./providers/incoming-data/incoming-data.ts:              this.handlePayPro(details, coin);
+./providers/incoming-data/incoming-data.ts:              if (addr && amount) this.goSend(addr, amount, message, coin);
+./providers/incoming-data/incoming-data.ts:          this.goSend(addr, amount, message, coin);
+./providers/incoming-data/incoming-data.ts:      let coin = 'btc'; // Assume BTJ
+./providers/incoming-data/incoming-data.ts:        .getPayProDetails(data, coin, true)
+./providers/incoming-data/incoming-data.ts:          this.handlePayPro(details, coin);
+./providers/incoming-data/incoming-data.ts:          coin: 'btc'
+./providers/incoming-data/incoming-data.ts:        let coin = 'btc';
+./providers/incoming-data/incoming-data.ts:        this.goToAmountPage(data, coin);
+./providers/incoming-data/incoming-data.ts:          coin: 'bch'
+./providers/incoming-data/incoming-data.ts:        let coin = 'bch';
+./providers/incoming-data/incoming-data.ts:        this.goToAmountPage(data, coin);
+./providers/incoming-data/incoming-data.ts:      data.indexOf(this.appProvider.info.name + '://coinbase') === 0
+./providers/incoming-data/incoming-data.ts:    coin: string
+./providers/incoming-data/incoming-data.ts:        coin
+./providers/incoming-data/incoming-data.ts:        coin
+./providers/incoming-data/incoming-data.ts:  private goToAmountPage(toAddress: string, coin: string): void {
+./providers/incoming-data/incoming-data.ts:      coin
+./providers/incoming-data/incoming-data.ts:  private handlePayPro(payProDetails, coin?: string): void {
+./providers/incoming-data/incoming-data.ts:      coin,
+./providers/incoming-data/incoming-data.spec.ts:          coin: 'bch'
+./providers/incoming-data/incoming-data.spec.ts:          coin: 'bch'
+./providers/incoming-data/incoming-data.spec.ts:            coin: 'btc'
+./providers/incoming-data/incoming-data.spec.ts:            coin: 'btc'
+./providers/incoming-data/incoming-data.spec.ts:          coin: 'bch'
+./providers/incoming-data/incoming-data.spec.ts:          coin: 'btc'
+./providers/incoming-data/incoming-data.spec.ts:      let data = ['bitpay://coinbase', 'copay://coinbase'];
+./providers/index.ts:export { CoinbaseProvider } from '../providers/coinbase/coinbase';
+./providers/config/config.ts:    coinbase: boolean;
+./providers/config/config.ts:    coinbase: true,
+./providers/tx-format/tx-format.ts:  public formatAmountStr(coin : string, satoshis: number): string {
+./providers/tx-format/tx-format.ts:    return this.formatAmount(satoshis) + ' ' + coin;
+./providers/tx-format/tx-format.ts:  public toFiat(coin: string, satoshis: number, code: string): Promise<any> {
+./providers/tx-format/tx-format.ts:      v1 = this.rate.toFiat(satoshis, code, coin);
+./providers/tx-format/tx-format.ts:  public formatToUSD(coin: string, satoshis: number): Promise<any> {
+./providers/tx-format/tx-format.ts:      v1 = this.rate.toFiat(satoshis, 'USD', coin);
+./providers/tx-format/tx-format.ts:  public formatAlternativeStr(coin: string, satoshis: number): string {
+./providers/tx-format/tx-format.ts:        this.rate.toFiat(satoshis, settings.alternativeIsoCode, coin).toFixed(2)
+./providers/tx-format/tx-format.ts:      (!this.rate.isBtcAvailable() && coin == 'btj') ||
+./providers/tx-format/tx-format.ts:      (!this.rate.isBchAvailable() && coin == 'bch')
+./providers/tx-format/tx-format.ts:  public processTx(coin: string, tx, useLegacyAddress: boolean) {
+./providers/tx-format/tx-format.ts:            o.amountStr = this.formatAmountStr(coin, o.amount);
+./providers/tx-format/tx-format.ts:            o.alternativeAmountStr = this.formatAlternativeStr(coin, o.amount);
+./providers/tx-format/tx-format.ts:      if (tx.toAddress && coin == 'bch') {
+./providers/tx-format/tx-format.ts:    tx.amountStr = this.formatAmountStr(coin, tx.amount);
+./providers/tx-format/tx-format.ts:    tx.alternativeAmountStr = this.formatAlternativeStr(coin, tx.amount);
+./providers/tx-format/tx-format.ts:    tx.feeStr = this.formatAmountStr(coin, tx.fee || tx.fees);
+./providers/tx-format/tx-format.ts:    if (tx.addressTo && coin == 'bch') {
+./providers/tx-format/tx-format.ts:        coin: 'btj',
+./providers/tx-format/tx-format.ts:      tx = this.processTx(tx.wallet.coin, tx);
+./providers/tx-format/tx-format.ts:  public parseAmount(coin: string, amount, currency: string) {
+./providers/tx-format/tx-format.ts:      amountSat = Number(this.rate.fromFiat(amount, currency, coin).toFixed(0));
+./providers/tx-format/tx-format.ts:      amountUnitStr = this.formatAmountStr(coin, amountSat);
+./providers/tx-format/tx-format.ts:      currency = coin.toUpperCase();
+./providers/tx-format/tx-format.ts:      amountUnitStr = this.formatAmountStr(coin, amountSat);
+./providers/tx-format/tx-format.ts:      currency = coin.toUpperCase();
+./providers/wallet/wallet.ts:  coin: any;
+./providers/wallet/wallet.ts:            wallet.coin,
+./providers/wallet/wallet.ts:          wallet.coin,
+./providers/wallet/wallet.ts:          wallet.coin,
+./providers/wallet/wallet.ts:          wallet.coin,
+./providers/wallet/wallet.ts:          wallet.coin,
+./providers/wallet/wallet.ts:          wallet.coin,
+./providers/wallet/wallet.ts:          .whenRatesAvailable(wallet.coin)
+./providers/wallet/wallet.ts:              wallet.coin
+./providers/wallet/wallet.ts:              wallet.coin
+./providers/wallet/wallet.ts:              wallet.coin
+./providers/wallet/wallet.ts:              wallet.coin
+./providers/wallet/wallet.ts:              wallet.coin
+./providers/wallet/wallet.ts:    if (wallet.coin != 'bch' || this.useLegacyAddress()) return address;
+./providers/wallet/wallet.ts:    let proto: string = this.getProtocolHandler(wallet.coin, wallet.network);
+./providers/wallet/wallet.ts:    if (wallet.coin != 'bch' || this.useLegacyAddress()) {
+./providers/wallet/wallet.ts:          this.logger.debug('Fixing Tx Cache Unit to: ' + wallet.coin);
+./providers/wallet/wallet.ts:              wallet.coin,
+./providers/wallet/wallet.ts:              wallet.coin,
+./providers/wallet/wallet.ts:        wallet.coin,
+./providers/wallet/wallet.ts:        .getFeeLevels(wallet.coin)
+./providers/wallet/wallet.ts:          coin: wallet.coin
+./providers/wallet/wallet.ts:          wallet.coin
+./providers/wallet/wallet.ts:  public getProtocolHandler(coin: string, network?: string): string {
+./providers/wallet/wallet.ts:    if (coin == 'bch') {
+./providers/wallet/wallet.ts:            coin: newWallet.credentials.coin
+./providers/wallet/wallet.spec.ts:    it('should return bastojicash if coin is bch and network is livenet', () => {
+./providers/wallet/wallet.spec.ts:      let coin = 'bch';
+./providers/wallet/wallet.spec.ts:      let protocol = walletProvider.getProtocolHandler(coin, network);
+./providers/wallet/wallet.spec.ts:    it('should return bchtest if coin is bch and network is testnet', () => {
+./providers/wallet/wallet.spec.ts:      let coin = 'bch';
+./providers/wallet/wallet.spec.ts:      let protocol = walletProvider.getProtocolHandler(coin, network);
+./providers/wallet/wallet.spec.ts:    it('should return bastoji if coin is btc', () => {
+./providers/wallet/wallet.spec.ts:      let coin = 'btc';
+./providers/wallet/wallet.spec.ts:      let protocol = walletProvider.getProtocolHandler(coin);
+./providers/coinbase/coinbase.ts:      !this.appProvider.servicesInfo.coinbase
+./providers/coinbase/coinbase.ts:    var coinbase = this.appProvider.servicesInfo.coinbase;
+./providers/coinbase/coinbase.ts:      ? coinbase.redirect_uri.mobile
+./providers/coinbase/coinbase.ts:      : coinbase.redirect_uri.desktop;
+./providers/coinbase/coinbase.ts:      this.credentials.HOST = coinbase.sandbox.host;
+./providers/coinbase/coinbase.ts:      this.credentials.API = coinbase.sandbox.api;
+./providers/coinbase/coinbase.ts:      this.credentials.CLIENT_ID = coinbase.sandbox.client_id;
+./providers/coinbase/coinbase.ts:      this.credentials.CLIENT_SECRET = coinbase.sandbox.client_secret;
+./providers/coinbase/coinbase.ts:      this.credentials.HOST = coinbase.production.host;
+./providers/coinbase/coinbase.ts:      this.credentials.API = coinbase.production.api;
+./providers/coinbase/coinbase.ts:      this.credentials.CLIENT_ID = coinbase.production.client_id;
+./providers/coinbase/coinbase.ts:      this.credentials.CLIENT_SECRET = coinbase.production.client_secret;
+./providers/coinbase/coinbase.ts:      this.homeIntegrationsProvider.updateLink('coinbase', data.access_token); // Name, Token
+./providers/coinbase/coinbase.ts:    return 'https://support.coinbase.com/';
+./providers/coinbase/coinbase.ts:    this.homeIntegrationsProvider.updateLink('coinbase', null); // Name, Token
+./providers/coinbase/coinbase.ts:  public getPendingTransactions(coinbasePendingTransactions) {
+./providers/coinbase/coinbase.ts:        coinbasePendingTransactions.data = _.isEmpty(txs) ? null : txs;
+./providers/coinbase/coinbase.ts:            coinbasePendingTransactions.data,
+./providers/coinbase/coinbase.ts:                      this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:                coinbasePendingTransactions.data[txId] = dataFromStorage;
+./providers/coinbase/coinbase.ts:                            this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:                          coinbasePendingTransactions
+./providers/coinbase/coinbase.ts:                            this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:                    coinbasePendingTransactions
+./providers/coinbase/coinbase.ts:                    this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:    this.logger.debug('Updating coinbase pending transactions...');
+./providers/coinbase/coinbase.ts:  private _updateTxs(coinbasePendingTransactions) {
+./providers/coinbase/coinbase.ts:        coinbasePendingTransactions.data = _.isEmpty(txs) ? null : txs;
+./providers/coinbase/coinbase.ts:    coinbasePendingTransactions
+./providers/coinbase/coinbase.ts:            this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:              this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:                  this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:                  this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:    coinbasePendingTransactions
+./providers/coinbase/coinbase.ts:            this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:              this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:                this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:                    this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:                    this._updateTxs(coinbasePendingTransactions);
+./providers/coinbase/coinbase.ts:        name: 'coinbase',
+./providers/coinbase/coinbase.ts:        icon: 'assets/img/coinbase/coinbase-icon.png',
+./providers/coinbase/coinbase.ts:        show: !!this.configProvider.get().showIntegration['coinbase'],
+./providers/home-integrations/home-integrations.ts:const exchangeList: object[] = [{ name: 'coinbase' }, { name: 'glidera' }];
+./providers/replace-parameters/replace-parameters.ts:* let message = this.replaceParametersProvider.replace(this.translate.instant('A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided.'), { amountBelowFeeStr: amountBelowFeeStr, coin: this.tx.coin.toUpperCase() });
+./providers/replace-parameters/replace-parameters.spec.ts:      'A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided.',
+./providers/replace-parameters/replace-parameters.spec.ts:      { amountBelowFeeStr: '0.000100', coin: 'BTJ' }
+./providers/replace-parameters/replace-parameters.spec.ts:      'A total of {{ amountBelowFeeStr }} {{ coin }} were excluded. These funds come from UTXOs smaller than the network fee provided.',
+./providers/replace-parameters/replace-parameters.spec.ts:      { amountBelowFeeStr: '0.000100', coin: 'BTJ' }
+./providers/persistence/persistence.ts:  COINBASE_REFRESH_TOKEN: network => 'coinbaseRefreshToken-' + network,
+./providers/persistence/persistence.ts:  COINBASE_TOKEN: network => 'coinbaseToken-' + network,
+./providers/persistence/persistence.ts:  COINBASE_TXS: network => 'coinbaseTxs-' + network,
+./assets/i18n/po/es.po:msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/es.po:msgstr "Se excluyeron un total de {{amountAboveMaxSizeStr}} {{coin}}. Se superó el tamaño máximo permitido para una transacción."
+./assets/i18n/po/es.po:msgid "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/es.po:msgstr "Se excluyeron un total de {{amountBelowFeeStr}} {{coin}}. Estos fondos provienen de UTXOs más pequeños que la comisión de red provista."
+./assets/i18n/po/es.po:msgid "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/es.po:msgstr "Se excluyeron un total de {{fee}} {{coin}}. Se superó el tamaño máximo permitido para una transacción."
+./assets/i18n/po/es.po:msgid "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/es.po:msgstr "Se excluyeron un total de {{fee}} {{coin}}. Estos fondos provienen de UTXOs más pequeños que la comisión de red provista."
+./assets/i18n/po/es.po:msgstr "Las contraseñas no coinciden"
+./assets/i18n/po/es.po:msgid "Select a coin"
+./assets/i18n/po/es.po:msgid "WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis."
+./assets/i18n/po/es.po:msgstr "la contraseña no coincide"
+./assets/i18n/po/es.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/es.po:msgstr "Se descontará {{fee}} {{coin}} por comisión de la red bastoji."
+./assets/i18n/po/fr.po:msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/fr.po:msgstr "Un total de {{amountAboveMaxSizeStr}} {{coin}} a été exclu. La taille maximale autorisée pour une transaction a été dépassée."
+./assets/i18n/po/fr.po:msgid "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/fr.po:msgstr "Un total de {{amountBelowFeeStr}} {{coin}} a été exclu. Ces fonds proviennent d'UTXOs plus petites que les frais de réseau fournis."
+./assets/i18n/po/fr.po:msgid "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/fr.po:msgstr "Un total de {{fee}} {{coin}} a été exclu. La taille maximale autorisée pour une transaction a été dépassée."
+./assets/i18n/po/fr.po:msgid "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/fr.po:msgstr "Un total de {{fee}} {{coin}} a été exclu. Ces fonds proviennent d'UTXOs plus petites que les frais de réseau fournis."
+./assets/i18n/po/fr.po:msgid "Select a coin"
+./assets/i18n/po/fr.po:msgid "WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis."
+./assets/i18n/po/fr.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/fr.po:msgstr "{{fee}} {{coin}} seront déduits pour les frais de réseau Bastoji."
+./assets/i18n/po/ja.po:msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/ja.po:msgid "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/ja.po:msgid "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/ja.po:msgid "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/ja.po:msgid "Select a coin"
+./assets/i18n/po/ja.po:msgid "WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis."
+./assets/i18n/po/ja.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/it.po:msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/it.po:msgstr "Un totale di {{amountAboveMaxSizeStr}} {{coin}} sono stati esclusi. È stata superata la dimensione massima consentita per una transazione."
+./assets/i18n/po/it.po:msgid "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/it.po:msgstr "Un totale di {{amountBelowFeeStr}} {{coin}} sono stati esclusi. Questi fondi provengono da UTXO più piccole rispetto alla commissione di rete fornita."
+./assets/i18n/po/it.po:msgid "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/it.po:msgstr "Un totale di {{fee}} {{coin}} sono stati esclusi. È stata superata la dimensione massima consentita per una transazione."
+./assets/i18n/po/it.po:msgid "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/it.po:msgstr "Un totale di {{fee}} {{coin}} sono stati esclusi. Questi fondi provengono da UTXO più piccole rispetto alla commissione di rete fornita."
+./assets/i18n/po/it.po:msgid "Select a coin"
+./assets/i18n/po/it.po:msgid "WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis."
+./assets/i18n/po/it.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/it.po:msgstr "{{fee}} {{coin}} verrà detratto per le spese di rete bastoji."
+./assets/i18n/po/ru.po:msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/ru.po:msgstr "В общей сложности {{amountAboveMaxSizeStr}} {{coin}} было исключено. Превышен максимальный размер транзакции."
+./assets/i18n/po/ru.po:msgid "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/ru.po:msgstr "В общей сложности {{amountBelowFeeStr}} {{coin}} было исключено. Эти средства поступают от UTXOs которые меньше чем плата за сеть."
+./assets/i18n/po/ru.po:msgid "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/ru.po:msgstr "В общей сложности {{fee}} {{coin}} было исключено. Превышен максимальный размер транзакции."
+./assets/i18n/po/ru.po:msgid "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/ru.po:msgstr "В общей сложности {{fee}} {{coin}} было исключено. Эти средства поступают от UTXOs которые меньше, чем предусмотренная плата за сеть."
+./assets/i18n/po/ru.po:msgid "Select a coin"
+./assets/i18n/po/ru.po:msgid "WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis."
+./assets/i18n/po/ru.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/pl.po:msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/pl.po:msgid "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/pl.po:msgid "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/pl.po:msgid "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/pl.po:msgid "Select a coin"
+./assets/i18n/po/pl.po:msgid "WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis."
+./assets/i18n/po/pl.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/ko.po:msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/ko.po:msgstr "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/ko.po:msgid "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/ko.po:msgstr "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/ko.po:msgid "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/ko.po:msgstr "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/ko.po:msgid "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/ko.po:msgstr "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/ko.po:msgid "Select a coin"
+./assets/i18n/po/ko.po:msgid "WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis."
+./assets/i18n/po/ko.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/zh.po:msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/zh.po:msgid "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/zh.po:msgid "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/zh.po:msgid "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/zh.po:msgid "Select a coin"
+./assets/i18n/po/zh.po:msgid "WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis."
+./assets/i18n/po/zh.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/pt.po:msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/pt.po:msgstr "Um total de {{amountAboveMaxSizeStr}} {{coin}} foi excluído. O tamanho máximo permitido para uma transação foi excedido."
+./assets/i18n/po/pt.po:msgid "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/pt.po:msgstr "Um total de {{amountBelowFeeStr}} {{coin}} foi excluído. Estes fundos provêm de UTXOs menores que a taxa de rede fornecida."
+./assets/i18n/po/pt.po:msgid "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/pt.po:msgstr "O montante de {{fee}} {{coin}} foi excluído. O valor máximo permitido para uma transação foi excedido."
+./assets/i18n/po/pt.po:msgid "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/pt.po:msgstr "Um total de {{fee}} {{coin}} foi excluído. Estes fundos provêm de UTXOs menores que a taxa de rede fornecida."
+./assets/i18n/po/pt.po:msgstr "As senhas não coincidem"
+./assets/i18n/po/pt.po:msgid "Select a coin"
+./assets/i18n/po/pt.po:msgid "WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis."
+./assets/i18n/po/pt.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/pt.po:msgstr "{{fee}} {{coin}} será deduzido para taxas de rede bastoji."
+./assets/i18n/po/nl.po:msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/nl.po:msgid "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/nl.po:msgid "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/nl.po:msgid "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/nl.po:msgid "Select a coin"
+./assets/i18n/po/nl.po:msgid "WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis."
+./assets/i18n/po/nl.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/de.po:msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/de.po:msgstr "Un total de {{amountAboveMaxSizeStr}} {{coin}} a été exclu. La taille maximale autorisée pour une transaction a été dépassée.deutsch."
+./assets/i18n/po/de.po:msgid "A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/de.po:msgid "A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
+./assets/i18n/po/de.po:msgid "A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs smaller than the network fee provided."
+./assets/i18n/po/de.po:msgid "Select a coin"
+./assets/i18n/po/de.po:msgid "WARNING: The testnet is an alternative Bastoji block chain, to be used for testing. Testnet coins are separate and distinct from actual bastojis, and do not have any value. This allows application developers or bastoji testers to experiment, without having to use real bastojis."
+./assets/i18n/po/de.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/en.po:"A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum "
+./assets/i18n/po/en.po:"A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum "
+./assets/i18n/po/en.po:"A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come "
+./assets/i18n/po/en.po:"A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come "
+./assets/i18n/po/en.po:"A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a "
+./assets/i18n/po/en.po:"A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a "
+./assets/i18n/po/en.po:"A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs "
+./assets/i18n/po/en.po:"A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs "
+./assets/i18n/po/en.po:msgid "Select a coin"
+./assets/i18n/po/en.po:msgstr "Select a coin"
+./assets/i18n/po/en.po:"testing. Testnet coins are separate and distinct from actual bastojis, and "
+./assets/i18n/po/en.po:"testing. Testnet coins are separate and distinct from actual bastojis, and "
+./assets/i18n/po/en.po:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/en.po:msgstr "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/i18n/po/template.pot:"A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum "
+./assets/i18n/po/template.pot:"A total of {{amountBelowFeeStr}} {{coin}} were excluded. These funds come "
+./assets/i18n/po/template.pot:"A total of {{fee}} {{coin}} were excluded. The maximum size allowed for a "
+./assets/i18n/po/template.pot:"A total of {{fee}} {{coin}} were excluded. These funds come from UTXOs "
+./assets/i18n/po/template.pot:msgid "Select a coin"
+./assets/i18n/po/template.pot:"testing. Testnet coins are separate and distinct from actual bastojis, and "
+./assets/i18n/po/template.pot:msgid "{{fee}} {{coin}} will be deducted for bastoji networking fees."
+./assets/appConfig.json:{"packageName":"copay","packageDescription":"Copay Bastoji Wallet","packageNameId":"com.bitpay.copay","themeColor":"#192c3a","userVisibleName":"Copay","purposeLine":"Copay Bastoji Wallet","bundleName":"copay","appUri":"copay","name":"copay","nameNoSpace":"copay","nameCase":"Copay","nameCaseNoSpace":"Copay","gitHubRepoName":"copay","gitHubRepoUrl":"git://github.com/bitpay/copay.git","gitHubRepoBugs":"https://github.com/bitpay/copay/issues","disclaimerUrl":"https://copay.io/disclaimer","url":"https://copay.io","appDescription":"Copay Bastoji Wallet","winAppName":"CopayWallet","WindowsStoreIdentityName":"18C7659D.Copay-SecureBastojiWallet","WindowsStoreDisplayName":"Copay - Secure Bastoji Wallet","windowsAppId":"804636ee-b017-4cad-8719-e58ac97ffa5c","pushSenderId":"1036948132229","description":"A Secure Bastoji Wallet","version":"4.5.0","androidVersion":"45000000","_extraCSS":null,"_enabledExtensions":{"coinbase":true,"glidera":true,"debitcard":false,"amazon":true,"mercadolibre":true,"shapeshift":true},"commitHash":"c449e4c"}
+./assets/img/icon-bastoji.svg:    <path id="coin" d="M25.5,51C39.6,51 51,39.6 51,25.5C51,11.4 39.5,0 25.5,0C11.5,0 0,11.4 0,25.5C0,39.6 11.4,51 25.5,51Z" style="fill:url(#_Linear1);fill-rule:nonzero;"/>
+./assets/img/app/icon-bastoji.svg:            <path d="M25.5,51 C39.6,51 51,39.6 51,25.5 C51,11.4 39.5,0 25.5,0 C11.5,0 0,11.4 0,25.5 C0,39.6 11.4,51 25.5,51 Z" id="coin" fill="#FF9900"></path>
+./assets/img/mcc-icons/coins.svg:<svg width="29" height="41" viewBox="0 0 29 41" xmlns="http://www.w3.org/2000/svg"><g class="nc-icon-wrapper" fill="#444444"><title>coins</title><g transform="translate(-148 -999) translate(148 999) translate(.5 .5)" stroke="#444444" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M12.5 32.3c-1.3.4-2.8.7-4.5.7-4.4 0-8-1.8-8-4 0-1 .7-1.8 1.8-2.5"></path><path d="M12.5 27.3c-1.3.4-2.8.7-4.5.7-4.4 0-8-1.8-8-4 0-.9.6-1.8 1.7-2.5"></path><path d="M12.5 22.3c-1.3.4-2.8.7-4.5.7-4.4 0-8-1.8-8-4 0-1 .7-1.8 1.8-2.5"></path><path d="M12.5 17.3c-1.3.4-2.8.7-4.5.7-4.4 0-8-1.8-8-4 0-.9.7-1.8 1.8-2.5"></path><path d="M14.2 11.5c.6.3 1 .7 1.3 1.2"></path><path d="M14.3 6.5C15.4 7.2 16 8 16 9c0 2.2-3.6 4-8 4s-8-1.8-8-4c0-1 .7-1.8 1.8-2.5"></path><ellipse cx="8" cy="4" rx="8" ry="4"></ellipse><path d="M26.2 33.5c1.1.7 1.8 1.5 1.8 2.5 0 2.2-3.6 4-8 4s-8-1.8-8-4c0-.9.7-1.8 1.8-2.5"></path><path d="M26.2 28.5c1.1.7 1.8 1.5 1.8 2.5 0 2.2-3.6 4-8 4s-8-1.8-8-4c0-1 .7-1.8 1.8-2.5"></path><path d="M26.2 23.4c1.1.7 1.8 1.6 1.8 2.6 0 2.2-3.6 4-8 4s-8-1.8-8-4c0-.9.7-1.8 1.7-2.5"></path><path d="M26.2 18.5c1.1.7 1.8 1.5 1.8 2.5 0 2.2-3.6 4-8 4s-8-1.8-8-4c0-1 .7-1.8 1.8-2.5"></path><ellipse cx="20" cy="16" rx="8" ry="4"></ellipse></g></g></svg>

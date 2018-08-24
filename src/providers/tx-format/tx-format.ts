@@ -7,6 +7,7 @@ import { RateProvider } from '../rate/rate';
 
 import * as _ from 'lodash';
 
+
 @Injectable()
 export class TxFormatProvider {
   private bitcoreCash;
@@ -54,9 +55,10 @@ export class TxFormatProvider {
       .formatAmount(satoshis, settings.unitCode, opts);
   }
 
-  public formatAmountStr(coin: string, satoshis: number): string {
-    if (isNaN(satoshis)) return undefined;
-    return this.formatAmount(satoshis) + ' ' + coin.toUpperCase();
+  public formatAmountStr(coin : string, satoshis: number): string {
+     if (isNaN(satoshis)) return undefined;
+    this.formatAmount(satoshis) 
+    return this.formatAmount(satoshis) + ' ' + (coin='BTJ');
   }
 
   public toFiat(coin: string, satoshis: number, code: string): Promise<any> {
@@ -96,7 +98,7 @@ export class TxFormatProvider {
     }).bind(this);
 
     if (
-      (!this.rate.isBtcAvailable() && coin == 'btc') ||
+      (!this.rate.isBtcAvailable() && coin == 'btj') ||
       (!this.rate.isBchAvailable() && coin == 'bch')
     )
       return null;
@@ -182,7 +184,7 @@ export class TxFormatProvider {
       // TODO: implement profileService.getWallet(tx.walletId)
       // TODO tx.wallet = profileService.getWallet(tx.walletId);
       tx.wallet = {
-        coin: 'btc',
+        coin: 'btj',
         copayerId: 'asdasdasdasd'
       };
       // hardcoded tx.wallet ^
