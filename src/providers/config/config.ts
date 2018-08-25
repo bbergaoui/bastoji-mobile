@@ -186,7 +186,7 @@ const configDefault: Config = {
   },
 
   rates: {
-    url: 'http://sqoin.us/insight/'
+    url: 'http://bws.bitpay.com/insight/'
   },
 
   release: {
@@ -209,8 +209,8 @@ const configDefault: Config = {
   },
 
   blockExplorerUrl: {
-    btc: 'sqoin.us/insight/',
-    bch: 'sqoin.us/insight/'
+    btc: 'bws.bitpay.com/insight/',
+    bch: 'bws.bitpay.com/insight/'
   }
 };
 

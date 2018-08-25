@@ -90,7 +90,7 @@ const configDefault = {
         shapeshift: true
     },
     rates: {
-        url: 'http://sqoin.us/insight/'
+        url: 'http://bws.bitpay.com/insight/'
     },
     release: {
         url: 'https://api.github.com/repos/bitpay/copay/releases/latest'
@@ -107,8 +107,8 @@ const configDefault = {
         weight: 3
     },
     blockExplorerUrl: {
-        btc: 'sqoin.us/insight/',
-        bch: 'sqoin.us/insight/'
+        btc: 'bws.bitpay.com/insight/',
+        bch: 'bws.bitpay.com/insight/'
     }
 };
 let ConfigProvider = class ConfigProvider {
@@ -13635,7 +13635,7 @@ let BitPayCardPage = class BitPayCardPage {
         this.externalLinkProvider.open(url, optIn, title, message, okText, cancelText);
     }
     viewOnBlockchain(transactionId) {
-        let url = 'http://sqoin.us/insight/' + transactionId;
+        let url = 'http://bws.bitpay.com/insight/' + transactionId;
         let optIn = true;
         let title = null;
         let message = this.translate.instant('View Transaction on Insight');

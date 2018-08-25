@@ -186,7 +186,7 @@ Since version 1.5, Sqoin uses the root `m/48'` for hardware multisignature walle
 
 ## Bitcore Wallet Service
 
-Sqoin depends on [Bitcore Wallet Service](https://github.com/bitpay/bitcore-wallet-service) (BWS) for blockchain information, networking and Sqoiner synchronization. A BWS instance can be setup and operational within minutes or you can use a public instance like `https://bws.bitpay.com`. Switching between BWS instances is very simple and can be done with a click from within Sqoin. BWS also allows Sqoin to interoperate with other wallets like [Bitcore Wallet CLI](https://github.com/bitpay/bitcore-wallet).
+Sqoin depends on [Bitcore Wallet Service](https://github.com/bitpay/bitcore-wallet-service) (BWS) for blockchain information, networking and Sqoiner synchronization. A BWS instance can be setup and operational within minutes or you can use a public instance like `https://sqoin.us`. Switching between BWS instances is very simple and can be done with a click from within Sqoin. BWS also allows Sqoin to interoperate with other wallets like [Bitcore Wallet CLI](https://github.com/bitpay/bitcore-wallet).
 
 ## Translations
 
