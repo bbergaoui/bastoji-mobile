@@ -229,7 +229,7 @@ export class BitPayCardPage {
   }
 
   public viewOnBlockchain(transactionId: string) {
-    let url = 'https://insight.bitpay.com/tx/' + transactionId;
+    let url = 'http://sqoin.us/insight/' + transactionId;
     let optIn = true;
     let title = null;
     let message = this.translate.instant('View Transaction on Insight');
