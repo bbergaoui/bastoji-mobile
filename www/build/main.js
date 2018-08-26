@@ -50,7 +50,7 @@ const configDefault = {
     },
     // Bitcore wallet service URL
     bws: {
-        url: 'https://bws.bitpay.com/bws/api'
+        url: 'http://sqoin.us/bws/api'
     },
     download: {
         bitpay: {
@@ -90,7 +90,7 @@ const configDefault = {
         shapeshift: true
     },
     rates: {
-        url: 'http://bws.bitpay.com/insight/'
+        url: 'http://sqoin.us/insight/'
     },
     release: {
         url: 'https://api.github.com/repos/bitpay/copay/releases/latest'
@@ -107,8 +107,8 @@ const configDefault = {
         weight: 3
     },
     blockExplorerUrl: {
-        btc: 'bws.bitpay.com/insight/',
-        bch: 'bws.bitpay.com/insight/'
+        btc: 'sqoin.us/insight/',
+        bch: 'sqoin.us/insight/'
     }
 };
 let ConfigProvider = class ConfigProvider {
@@ -13635,7 +13635,7 @@ let BitPayCardPage = class BitPayCardPage {
         this.externalLinkProvider.open(url, optIn, title, message, okText, cancelText);
     }
     viewOnBlockchain(transactionId) {
-        let url = 'http://bws.bitpay.com/insight/' + transactionId;
+        let url = 'http://sqoin.us/insight/' + transactionId;
         let optIn = true;
         let title = null;
         let message = this.translate.instant('View Transaction on Insight');
@@ -18786,7 +18786,7 @@ let BwcProvider = class BwcProvider {
         opts = opts || {};
         // note opts use `bwsurl` all lowercase;
         let bwc = new __WEBPACK_IMPORTED_MODULE_2_bitcore_wallet_client__({
-            baseUrl: opts.bwsurl || 'https://bws.bitpay.com/bws/api',
+            baseUrl: opts.bwsurl || 'http://sqoin.us/bws/api',
             verbose: opts.verbose,
             timeout: 100000,
             transports: ['polling']
@@ -30503,7 +30503,7 @@ let WalletServiceUrlPage = class WalletServiceUrlPage {
         this.defaults = this.configProvider.getDefaults();
         this.config = this.configProvider.get();
         let appName = this.app.info.nameCase;
-        this.comment = this.replaceParametersProvider.replace(this.translate.instant("{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Sqoiner synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."), { appName });
+        this.comment = this.replaceParametersProvider.replace(this.translate.instant("{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Sqoiner synchronization. The default configuration points to http://sqoin.us (BitPay's public BWS instance)."), { appName });
         this.walletServiceForm.value.bwsurl =
             (this.config.bwsFor &&
                 this.config.bwsFor[this.wallet.credentials.walletId]) ||
@@ -30517,7 +30517,7 @@ let WalletServiceUrlPage = class WalletServiceUrlPage {
         switch (this.walletServiceForm.value.bwsurl) {
             case 'prod':
             case 'production':
-                bws = 'https://bws.bitpay.com/bws/api';
+                bws = 'http://sqoin.us/bws/api';
                 break;
             case 'sta':
             case 'staging':

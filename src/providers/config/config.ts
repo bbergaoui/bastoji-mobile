@@ -138,7 +138,7 @@ const configDefault: Config = {
 
   // Bitcore wallet service URL
   bws: {
-    url: 'https://bws.bitpay.com/bws/api'
+    url: 'http://sqoin.us/bws/api'
   },
 
   download: {
@@ -186,7 +186,7 @@ const configDefault: Config = {
   },
 
   rates: {
-    url: 'http://bws.bitpay.com/insight/'
+    url: 'http://sqoin.us/insight/'
   },
 
   release: {
@@ -209,8 +209,8 @@ const configDefault: Config = {
   },
 
   blockExplorerUrl: {
-    btc: 'bws.bitpay.com/insight/',
-    bch: 'bws.bitpay.com/insight/'
+    btc: 'sqoin.us/insight/',
+    bch: 'sqoin.us/insight/'
   }
 };
 

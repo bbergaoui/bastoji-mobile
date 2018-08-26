@@ -109,7 +109,7 @@ describe('ImportWalletPage', () => {
       testBed.createComponent(ImportWalletPage);
       let info = {
         derivationPath: "m/44'/0'/0'",
-        bwsURL: 'https://bws.bitpay.com/bws/api',
+        bwsURL: 'http://sqoin.us/bws/api',
         coin: 'btc',
         words: 'mom mom mom mom mom mom mom mom mom mom mom mom',
         backupText: 'test'
@@ -138,7 +138,7 @@ describe('ImportWalletPage', () => {
       testBed.createComponent(ImportWalletPage);
       let info = {
         derivationPath: "m/44'/0'/0'",
-        bwsURL: 'https://bws.bitpay.com/bws/api',
+        bwsURL: 'http://sqoin.us/bws/api',
         coin: 'btc',
         words: 'mom mom mom mom mom mom mom mom mom mom mom mom',
         backupText: 'test'
@@ -158,7 +158,7 @@ describe('ImportWalletPage', () => {
       testBed.createComponent(ImportWalletPage);
       let info = {
         derivationPath: "m/44'/0'/0'",
-        bwsURL: 'https://bws.bitpay.com/bws/api',
+        bwsURL: 'http://sqoin.us/bws/api',
         coin: 'btc',
         words: 'mom mom',
         backupText: 'test'
